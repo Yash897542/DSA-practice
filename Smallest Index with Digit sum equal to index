@@ -1,0 +1,31 @@
+class Solution {
+public:
+    int smallestIndex(vector<int>& nums) {
+        int n = nums.size();
+        int sum;
+        int digit;
+        if( n== 0){
+            return -1;
+        }
+        for(int i=0;i<n;i++){
+            int sum=0;
+            int current_num = nums[i];
+            if(current_num == 0){
+                sum =0;
+            }
+            else{
+            while(current_num>0){
+            sum+=current_num % 10;
+            current_num= current_num/10;
+            }
+            }
+            if(i == sum){
+                return i;
+            }
+            
+        }
+        return -1;
+
+        
+    }
+};
